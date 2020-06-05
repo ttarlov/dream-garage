@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import Login from '../Login/Login.jsx'
+import LandingPage from '../LandingPage/LandingPage.jsx'
+import Error from '../Error/Error.jsx'
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
       garage:[],
-      potentialCar: {}
+      potentialCar: {},
+      isLoggedin: false
     }
   }
 
@@ -41,14 +44,15 @@ class App extends Component {
       initialCar.oilChangeHistory = []
       initialCar.repairHistory = []
       initialCar.mpgHistory = []
+      initialCar.id = Date.now()
       this.setState({potentialCar:initialCar})
   
       console.log("car added");
   }
 
   addCarToGarage = () => {
-    this.setState({garage:[...this.state.garage, this.state.potentialCar], potentialCar: ""})
-
+    this.setState({garage:[...this.state.garage, this.state.potentialCar], potentialCar: "", isLoggedin: true})
+  
   }
 
 
@@ -57,12 +61,24 @@ class App extends Component {
 
     return (
       <main className='main-section'> 
-      <h1>Hello World</h1>
-      <Login 
-        buildCar = {this.buildCar} 
-        potentialCar = {this.state.potentialCar}
-        addCarToGarage = {this.addCarToGarage}
-        />
+      <Switch>
+        
+        <Route exact path = '/' render = { () => <Login 
+          buildCar = {this.buildCar} 
+          potentialCar = {this.state.potentialCar}
+          addCarToGarage = {this.addCarToGarage}
+          />} />
+
+           <Route path='/error' render ={ () => <Error /> }
+          />
+
+          { this.state.isLoggedin === true ? 
+          <Route exact path = '/garage' render = {() => <LandingPage garage ={this.state.garage} />} 
+        
+          /> : <Redirect to = "/error" />
+          }
+
+        </Switch>
     </main>
     )
   }
