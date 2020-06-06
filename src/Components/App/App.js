@@ -4,6 +4,7 @@ import './App.css';
 import Login from '../Login/Login.jsx'
 import LandingPage from '../LandingPage/LandingPage.jsx'
 import Error from '../Error/Error.jsx'
+import NavBar from '../NavBar/NavBar.jsx'
 
 class App extends Component {
   constructor(){
@@ -58,6 +59,9 @@ class App extends Component {
 
 
   render() {
+    let navBar;
+    this.state.isLoggedin === true ? navBar = <NavBar numOfCars={this.state.garage.length}/> : navBar = ""
+
 
     return (
       <main className='main-section'> 
@@ -79,6 +83,8 @@ class App extends Component {
           }
 
         </Switch>
+       {navBar}
+
     </main>
     )
   }
