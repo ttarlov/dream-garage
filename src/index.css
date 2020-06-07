@@ -7,20 +7,14 @@ body,
     sans-serif;
   box-sizing: border-box;
   color: black;
+  
 }
 
 body,
 html {
-   height: 100vh;
-   margin: 0;
-   width: 100%;
-   background-color: lightgray
- }
-
-.app-container {
   height: 100vh;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: lightgrey
+  width: 100%;
+  background-color: lightgray
 }
+
