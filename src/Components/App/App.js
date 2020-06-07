@@ -10,7 +10,16 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      garage:[],
+      garage:[
+        {
+          "Model Year": "1986", 
+          "Make": "Ferrari",
+          "Trim": "Superlegera", 
+          "Series":"wagon",
+          "Displacement (L)": "5.8",
+          "Engine Brake (hp)": "525"
+        }
+      ],
       potentialCar: {},
       isLoggedin: false
     }
@@ -67,7 +76,8 @@ class App extends Component {
       <main className='main-section'> 
       <Switch>
         
-        <Route exact path = '/' render = { () => <Login 
+        <Route exact path = '/' render = { () => 
+         <Login 
           buildCar = {this.buildCar} 
           potentialCar = {this.state.potentialCar}
           addCarToGarage = {this.addCarToGarage}
