@@ -39,7 +39,7 @@ class Form extends Component {
         
         return (
            <section className="form-container">
-            <form className="login-form" onSubmit= {(e)=> this.loginUser(e)}>
+            <form className="login-form" >
             <div className="input-container">
             <label>Input Vehicle Year</label>
             <input 
@@ -54,7 +54,7 @@ class Form extends Component {
             />
             </div>
             <div className="input-container">
-            <lable>Input Full Or Partial Vin</lable>
+            <label>Input Full Or Partial Vin</label>
             <input 
                 className="login-input"
                 type='text'
@@ -64,7 +64,7 @@ class Form extends Component {
                 onChange={this.handleChange}
             />
             </div>
-                <button type='submit' className="submit-btn" >Submit</button>
+                <button type='button' className="submit-btn" onClick={(e)=> this.loginUser(e)} >Submit</button>
             </form>
             {this.state.error && <div> <p className="error-message">{this.state.error}</p> </div>}
             </section>
