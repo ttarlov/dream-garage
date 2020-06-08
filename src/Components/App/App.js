@@ -5,23 +5,32 @@ import Login from '../Login/Login.jsx'
 import LandingPage from '../LandingPage/LandingPage.jsx'
 import Error from '../Error/Error.jsx'
 import NavBar from '../NavBar/NavBar.jsx'
+import HistoryCard from '../HistoryCard/HistoryCard.jsx'
+import uniqid from 'uniqid'
 
 class App extends Component {
   constructor(){
     super();
+    
     this.state = {
       garage:[
-        {
-          "Model Year": "1986", 
-          "Make": "Ferrari",
-          "Trim": "Superlegera", 
-          "Series":"wagon",
-          "Displacement (L)": "5.8",
-          "Engine Brake (hp)": "525"
-        }
+        // {
+        //   id: 2020,
+        //   "Model Year": "1986", 
+        //   "Make": "Ferrari",
+        //   "Trim": "Superlegera", 
+        //   "Series":"wagon",
+        //   "Displacement (L)": "5.8",
+        //   "Engine Brake (hp)": "525",
+        //   repairHistory: [],
+        //   mpgHistory: [],
+        //   oilChangeHistory: [{Date: "06-24-2020", Mileage: 123.567, id: 2020}, {Date: "07-24-2020", Mileage: 127.567, id: 2020}],
+        // }
       ],
+      oilChangeHistory: [],
       potentialCar: {},
-      isLoggedin: false
+      isLoggedin: false,
+      displayedHistory: [],
     }
   }
 
@@ -51,17 +60,30 @@ class App extends Component {
       "Engine Brake (hp)": "Engine Brake (hp)",
       })
 
-      initialCar.oilChangeHistory = []
+      initialCar.oilChangeHistory = [{Date: "06-24-2020", Mileage: "123.567"}]
       initialCar.repairHistory = []
       initialCar.mpgHistory = []
-      initialCar.id = Date.now()
+      initialCar.id = uniqid()
       this.setState({potentialCar:initialCar})
   
-      console.log("car added");
+   
   }
 
   addCarToGarage = () => {
     this.setState({garage:[...this.state.garage, this.state.potentialCar], potentialCar: "", isLoggedin: true})
+    
+  }
+
+
+ 
+
+
+  updateHistory = (newRecord) => {
+  
+    console.log("Need this now", newRecord);
+    
+    this.setState({oilChangeHistory:[...this.state.oilChangeHistory, newRecord]}) 
+  
   
   }
 
@@ -87,10 +109,20 @@ class App extends Component {
           />
 
           { this.state.isLoggedin === true ? 
-          <Route exact path = '/garage' render = {() => <LandingPage garage ={this.state.garage} />} 
+          <Route exact path = '/garage' render = {() => 
+            <LandingPage 
+            garage ={this.state.garage} 
+            />} 
         
           /> : <Redirect to = "/error" />
           }
+
+          <Route path = '/oilchanges/:id'  render= {({match}) => 
+          <HistoryCard 
+          updateHistory={this.updateHistory}
+          oilChangeHistory= {this.state.oilChangeHistory.filter(oilchange => oilchange.carId === match.params.id)}
+          match= {match} 
+          />} />
 
         </Switch>
        {navBar}
