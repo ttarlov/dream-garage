@@ -37,14 +37,13 @@ it('should render wihout errors', () => {
 
 it('Should allow user to log into "garage given correct date inputs" ', () => {
     
-    const { getByText, getByPlaceholderText, debug, getByTestId } = render(
+    const { getByText, getByPlaceholderText, debug} = render(
         <MemoryRouter>
         <Form  buildCar ={mockBuildCar}
         />
         </MemoryRouter>
     )           
-        const formEl = getByTestId('login-form')
-        expect(formEl).toBeInTheDocument()
+        
         
         const submitBtnEl = getByText('Submit')
         expect(submitBtnEl).toBeInTheDocument()
@@ -52,21 +51,19 @@ it('Should allow user to log into "garage given correct date inputs" ', () => {
         fireEvent.change(getByPlaceholderText('XXXX'), {target: {value: '2000'}});
         fireEvent.change(getByPlaceholderText('vin number'), {target: {value: 'xxxxxxxxxxxxxx'}});
         fireEvent.click(getByText('Submit'))
-        fireEvent.submit(getByTestId('login-form'))
         expect(mockBuildCar).toHaveBeenCalledTimes(1)
 
 });
 
 it('should give an error message if input is missing', () => {
     
-    const { getByText, getByPlaceholderText, debug, getByTestId } = render(
+    const { getByText, getByPlaceholderText, debug } = render(
         <MemoryRouter>
         <Form  buildCar ={mockBuildCar}
         />
         </MemoryRouter>
     )           
-        const formEl = getByTestId('login-form')
-        expect(formEl).toBeInTheDocument()
+      
         
         const submitBtnEl = getByText('Submit')
         expect(submitBtnEl).toBeInTheDocument()
