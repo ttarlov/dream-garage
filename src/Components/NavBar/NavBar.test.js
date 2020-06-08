@@ -6,7 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import NavBar from './NavBar.jsx'
 
 
-describe('NavBar', () => {
+describe('NavBar Component', () => {
+   
     it('should render without Errors', () => {
 
             const { getByText, debug } = render(
