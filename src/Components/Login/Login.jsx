@@ -28,10 +28,10 @@ const Login = (props) => {
             <div className="decision-btns-container">
            
                 <Link to = '/garage'>
-                <button className="decision-btn" onClick = {() => props.addCarToGarage()}>Add To garage</button>
+                <button className="decision-btn" onClick = {() => props.addCarToGarage()}>Add To Garage</button>
                 </Link>
                 
-                <button className="decision-btn" onClick= {() => window.location.reload(false)}>Start Over</button>
+                <button className="decision-btn" onClick= {() => props.resetPotentialCar()}>Start Over</button>
            
            
             </div>
