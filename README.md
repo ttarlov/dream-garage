@@ -8,7 +8,7 @@
 **Technologies Used:**
 *React*, *React Router*, *ES6*, *TDD*, *Fetch API for receiving 3rd party data*
 
-Dream Garage is an appication I built during my time at [Turing School of Softwar and Design](http://turing.io). The goal for this project, over the course of 5 days, was to build an application of my choosing using React and React Router. The app had to be fully tested using React Testing Library and Jest. 
+Dream Garage is an application I built during my time at [Turing School of Software and Design](http://turing.io). The goal for this project, over the course of 5 days, was to build an application of my choosing using React and React Router. The app had to be fully tested using React Testing Library and Jest. 
 
 **Challenges:**
 
@@ -23,7 +23,7 @@ I plan to keep working on this app and add following functionality:
 2. Ability to track fuel economy, and repair history
 3. Ability to load document such as insurance information and receipts
 4. I would like to build this app in React Native to deploy natively on Android and IOS
-5. I would like to build an arduino based GPS tracker that would integrate into the app 
+5. I would like to build an Arduino based GPS tracker that would integrate into the app 
 and allow user to track vehicle location and show it on a map. 
 
 ## Setup
@@ -62,7 +62,7 @@ Vin: waugb28d9xa015626
 
 ![3](./src/screenshots/garage.png)
 
-### See oilchange history by clicking "Oilchange history. 
+### See oil change history by clicking "Oil change history. 
 
 ![4](./src/screenshots/oilChange-history.png)
 
@@ -73,4 +73,5 @@ Vin: waugb28d9xa015626
 ### Go back to the garage by clicking garage icon.
 
 ![6](./src/screenshots/garage-icon.png)
+
 
