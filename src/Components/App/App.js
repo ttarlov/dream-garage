@@ -13,20 +13,7 @@ class App extends Component {
     super();
     
     this.state = {
-      garage:[
-        // {
-        //   id: 2020,
-        //   "Model Year": "1986", 
-        //   "Make": "Ferrari",
-        //   "Trim": "Superlegera", 
-        //   "Series":"wagon",
-        //   "Displacement (L)": "5.8",
-        //   "Engine Brake (hp)": "525",
-        //   repairHistory: [],
-        //   mpgHistory: [],
-        //   oilChangeHistory: [{Date: "06-24-2020", Mileage: 123.567, id: 2020}, {Date: "07-24-2020", Mileage: 127.567, id: 2020}],
-        // }
-      ],
+      garage:[],
       oilChangeHistory: [],
       potentialCar: {},
       isLoggedin: false,
