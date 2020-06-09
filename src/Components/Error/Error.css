@@ -1,0 +1,25 @@
+.error-page-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.error-page-container p {
+    font-size: 7vw;
+}
+
+.broken-car-img {
+    width: 85%;
+}
+
+.back-to-login-btn {
+    width: 100%;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 5.4vw;
+    border: solid 1px;
+    border-radius: 7px;
+    padding: 5px;
+}
