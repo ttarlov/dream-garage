@@ -64,7 +64,7 @@ Vin: waugb28d9xa015626
 
 ### See oilchange history by clicking "Oilchange history. 
 
-![4](./src/screenshots/oilchage-history.png)
+![4](./src/screenshots/oilChange-history.png)
 
 ### Add new record by filling out data and milage inputs.
 
