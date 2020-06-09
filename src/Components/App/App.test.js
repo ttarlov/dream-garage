@@ -50,7 +50,7 @@ it('Should have a login page', () => {
 
 });
 
-it('As a user after I fill in Year and Vin info (correctly) I should see my garage', async () => {
+it('As a user after I fill in Year and Vin info (correctly) I should see a potential car', async () => {
 
 
   const { getByText, getByPlaceholderText } = renderApp()
@@ -75,19 +75,18 @@ it('As a user I should see the car I choose to be added to the garage when I cli
     fireEvent.change(getByPlaceholderText('vin number'), {target: {value: 'waugb28d9xa015626'}});
     fireEvent.click(getByText('Submit'))
 
-    const addToGarageBtn = await waitFor( () => getByText("Add To garage"))
+    const addToGarageBtn = await waitFor( () => getByText("Add To Garage"))
     expect(addToGarageBtn).toBeInTheDocument()
     
-    fireEvent.click(getByText('Add To garage'))
+    fireEvent.click(getByText('Add To Garage'))
      
-    const typeEl = getByText("Type: quattro")
+    const typeEl = getByText("Trim: quattro")
     expect(typeEl).toBeInTheDocument()
-     
-  debug()
+      
 });
 
 
-it('As a user i should be able to see oilchange history of a chosen car', async () => {
+it('As a user I should be able to reset the process and get back to login page', async () => {
   
   const { getByText, getByPlaceholderText, debug } = renderApp()
 
@@ -95,10 +94,32 @@ it('As a user i should be able to see oilchange history of a chosen car', async 
     fireEvent.change(getByPlaceholderText('vin number'), {target: {value: 'waugb28d9xa015626'}});
     fireEvent.click(getByText('Submit'))
 
-    const addToGarageBtn = await waitFor( () => getByText("Add To garage"))
+    const restBtn = await waitFor( () => getByText("Start Over"))
+    expect(restBtn).toBeInTheDocument()
+    
+    fireEvent.click(getByText('Start Over'))
+     
+    const yearInputEl = getByText("Input Vehicle Year")
+    expect(yearInputEl).toBeInTheDocument()
+
+    const vinInputEl = getByText("Input Full Or Partial Vin")
+    expect(vinInputEl).toBeInTheDocument()
+ 
+});
+
+
+it('As a user I should be able to see oilchange history of a chosen car', async () => {
+  
+  const { getByText, getByPlaceholderText, debug } = renderApp()
+
+    fireEvent.change(getByPlaceholderText('XXXX'), {target: {value: '1999'}});
+    fireEvent.change(getByPlaceholderText('vin number'), {target: {value: 'waugb28d9xa015626'}});
+    fireEvent.click(getByText('Submit'))
+
+    const addToGarageBtn = await waitFor( () => getByText("Add To Garage"))
     expect(addToGarageBtn).toBeInTheDocument()
     
-    fireEvent.click(getByText('Add To garage'))
+    fireEvent.click(getByText('Add To Garage'))
 
     fireEvent.click(getByText("Oil Change History"))
 
@@ -116,10 +137,10 @@ it('As a user I should be able to add new oil change record', async () => {
     fireEvent.change(getByPlaceholderText('vin number'), {target: {value: 'waugb28d9xa015626'}});
     fireEvent.click(getByText('Submit'))
 
-    const addToGarageBtn = await waitFor( () => getByText("Add To garage"))
+    const addToGarageBtn = await waitFor( () => getByText("Add To Garage"))
     expect(addToGarageBtn).toBeInTheDocument()
     
-    fireEvent.click(getByText('Add To garage'))
+    fireEvent.click(getByText('Add To Garage'))
 
     fireEvent.click(getByText("Oil Change History"))
 
