@@ -17,7 +17,6 @@ describe('NavBar Component', () => {
                 </BrowserRouter>
         )
 
-        debug() 
         const garageIconEl = getByText('1')
         expect(garageIconEl).toBeInTheDocument(); 
 
