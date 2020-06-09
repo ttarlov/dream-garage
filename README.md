@@ -1,68 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dream Garage
 
-## Available Scripts
+## Contributors:
+[Taras Tarlov GitHub](https://github.com/ttarlov)
 
-In the project directory, you can run:
+## Abstract
 
-### `npm start`
+**Technologies Used:**
+*React*, *React Router*, *ES6*, *TDD*, *Fetch API for receiving 3rd party data*
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Dream Garage is an appication I built during my time at [Turing School of Softwar and Design](http://turing.io). The goal for this project, over the course of 5 days, was to build an application of my choosing using React and React Router. The app had to be fully tested using React Testing Library and Jest. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Challenges:**
 
-### `npm test`
+I had really big plans (I still do) for this app. However with just 5 days my MVP was much simpler than what i hoped it would be. Testing has proven to be much harder especially integration testing. I have gotten much better at it but its still one of my biggest challenges. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+**Future Plans for the App** 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I plan to keep working on this app and add following functionality:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Ability to add multiple vehicles to the garage
+2. Ability to track fuel economy, and repair history
+3. Ability to load document such as insurance information and receipts
+4. I would like to build this app in React Native to deploy natively on Android and IOS
+5. I would like to build an arduino based GPS tracker that would integrate into the app 
+and allow user to track vehicle location and show it on a map. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup
+1. clone down this repo to desired location
+2. `cd` into the new directory
+3. run `npm install`
+4. run `npm start`
+5. Open localhost:3000 in your favorite browser (unless your terminal says otherwise)
 
-### `npm run eject`
+## Animation 
+![1](./src/screenshots/dream-garage-v2.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 404 Error: 
+ Every good webapp should have a fun 404 page:-)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![7](./src/screenshots/404-page.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## User Stories :
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### User should be able to:
 
-## Learn More
+### Start the app by inputting year and vin number for your vehicle.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![1](./src/screenshots/login-page.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can use my Audi as an example 
 
-### Code Splitting
+Year: 1999
+Vin: waugb28d9xa015626
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Choose to either add car to garage or restart the process.
 
-### Analyzing the Bundle Size
+![2](./src/screenshots/potential-car.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### See your garage. 
 
-### Making a Progressive Web App
+![3](./src/screenshots/garage.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### See oilchange history by clicking "Oilchange history. 
 
-### Advanced Configuration
+![4](./src/screenshots/oilchage-history.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Add new record by filling out data and milage inputs.
 
-### Deployment
+![5](./src/screenshots/oilchage-history.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### Go back to the garage by clicking garage icon.
 
-### `npm run build` fails to minify
+![6](./src/screenshots/garage-icon.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
