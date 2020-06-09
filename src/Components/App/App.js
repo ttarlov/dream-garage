@@ -72,7 +72,11 @@ class App extends Component {
   }
 
 
- 
+  resetPotentialCar = () => {
+
+    this.setState({potentialCar: {}})
+
+  }
 
 
   updateHistory = (newRecord) => {
@@ -98,6 +102,7 @@ class App extends Component {
         <Route exact path = '/' render = { () => 
          <Login 
           buildCar = {this.buildCar} 
+          resetPotentialCar = {this.resetPotentialCar}
           potentialCar = {this.state.potentialCar}
           addCarToGarage = {this.addCarToGarage}
           />} />
