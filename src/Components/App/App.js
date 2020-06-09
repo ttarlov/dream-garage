@@ -60,9 +60,6 @@ class App extends Component {
       "Engine Brake (hp)": "Engine Brake (hp)",
       })
 
-      initialCar.oilChangeHistory = [{Date: "06-24-2020", Mileage: "123.567"}]
-      initialCar.repairHistory = []
-      initialCar.mpgHistory = []
       initialCar.id = uniqid()
       this.setState({potentialCar:initialCar})
   
@@ -80,7 +77,7 @@ class App extends Component {
 
   updateHistory = (newRecord) => {
   
-    console.log("Need this now", newRecord);
+   
     
     this.setState({oilChangeHistory:[...this.state.oilChangeHistory, newRecord]}) 
   
