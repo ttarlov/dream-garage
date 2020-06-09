@@ -5,14 +5,15 @@ import { Link } from 'react-router-dom';
 import stockImage from './audi-stock-image.jpg'
 import Form from "../Form/Form.jsx"
 import PropTypes from 'prop-types';
+import logo from './dream-car-logo.gif'
 
 const Login = (props) => {
 
         
         return (
             <section className='login-container'>
+                {Object.keys(props.potentialCar).length === 0 ? <img className="logo" src={logo} alt=" dream car logo"/> : null}
                 {Object.keys(props.potentialCar).length === 0 ? <Form buildCar ={props.buildCar} /> : ""}
-             
         
         {Object.keys(props.potentialCar).length > 0  ? 
         
@@ -24,14 +25,10 @@ const Login = (props) => {
                 <p>{props.potentialCar["Model"]}</p>
             </div>
             <div className="decision-btns-container">
-           
                 <Link to = '/garage'>
                 <button className="decision-btn" onClick = {() => props.addCarToGarage()}>Add To Garage</button>
-                </Link>
-                
+                </Link> 
                 <button className="decision-btn" onClick= {() => props.resetPotentialCar()}>Start Over</button>
-           
-           
             </div>
         </div> : null }
             </section>
