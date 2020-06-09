@@ -34,10 +34,10 @@ return (
                 <button id={props.carId} className="history-btn" > Oil Change History</button>
             </Link>
             <Link to='/milage'>
-                <button id={props.carId} className="history-btn"> Gas Mileage History</button>
+                <button  disabled  id={props.carId} className="history-btn not-available"> Gas Mileage History</button>
             </Link>
             <Link to='repairhistory'>
-                <button id={props.carId} className="history-btn"> Repair History</button>
+                <button disabled id={props.carId} className="history-btn not-available"> Repair History</button>
             </Link>
             </div>
     </section>
