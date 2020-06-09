@@ -9,7 +9,7 @@ class Form extends Component {
         super(props)
         this.state = {
             year: "",
-            vin: "waugb28d9xa015626",
+            vin: "",
             error: ''
         }
     }
