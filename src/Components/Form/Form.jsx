@@ -20,7 +20,7 @@ class Form extends Component {
     loginUser = (e) => {
 
 
-        if(this.state.year === "" || this.state.vin === "") {
+        if(this.state.year.length < 4  || this.state.vin.length < 12) {
             e.preventDefault();
             this.setState({error: "Please Fill In All Inputs"}) 
         } else {
@@ -65,8 +65,8 @@ class Form extends Component {
             />
             </div>
                 <button style={{color:this.state.year === "" || this.state.vin=== "" ? "grey" : null} } disabled = {this.state.year === "" || this.state.vin=== ""} type='button' className="submit-btn" onClick={(e)=> this.loginUser(e)} >Submit</button>
+            {this.state.error && <p className="error-message">{this.state.error}</p> }
             </form>
-            {this.state.error && <div> <p className="error-message">{this.state.error}</p> </div>}
             </section>
         )
 
