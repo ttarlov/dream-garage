@@ -148,7 +148,7 @@ it('As a user I should be able to add new oil change record', async () => {
     fireEvent.change(getByPlaceholderText('mileage'), {target: {value: '125,666'}});
     fireEvent.click(getByText("Add New Record"))
 
-    const addedHistoryEl = getByText("Date: 2020-06-10 | Mileage 125,666")
+    const addedHistoryEl = getByText("Date: 2020-06-10 | Mileage: 125,666")
     expect(addedHistoryEl).toBeInTheDocument()
   
 
