@@ -8,7 +8,7 @@ const Error = () => {
     return (
         <div className="error-page-container">
             <img  className="broken-car-img" src={accident} alt="broken car"></img>
-            <p>Accidents Happen</p>
+            <h1>Accidents Happen</h1>
 
             <Link to='/' >
                 <button className='back-to-login-btn'>Go Back to Login Page</button>
