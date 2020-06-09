@@ -16,7 +16,7 @@ describe("HistoryCard Component", () => {
             </MemoryRouter>
             )
 
-        const recordEl = getByText("Date: 06-24-2020 | Mileage 123.567")
+        const recordEl = getByText("Date: 06-24-2020 | Mileage: 123.567")
         expect(recordEl).toBeInTheDocument()
         
         

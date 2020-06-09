@@ -12,7 +12,7 @@ const NavBar = (props) => {
 
     return (
         <section className="nav-bar">
- <Link to="/repairhistory">
+ <Link to="/garage">
  <div className="icon-container">
     <img className="nav-icon" src={moneyIcon} alt="money icon"></img>
     <p>$2000</p>
@@ -27,7 +27,7 @@ const NavBar = (props) => {
  </Link> 
 
 
-<Link to="/mileage">
+<Link to="/garage">
     <div className="icon-container">
         <img className="nav-icon" src={mpg} alt="mpg icon"></img>
         <p>25mpg</p>
