@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './HistoryCard.css'
-// import uniqueid from 'uniqueid'
+import PropTypes from 'prop-types';
 
 
 class HistoryCard extends Component {
@@ -8,36 +8,28 @@ class HistoryCard extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            // history: [...this.props.history],
             inputOne: "",
             inputTwo: ""
         }
-
     }
 
 
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
     }
-   
     
     createRecord = () => {
         let newRecord = {Date: this.state.inputOne, Mileage: this.state.inputTwo, carId:this.props.match.params.id}
-        // this.setState({history:[...this.state.history, newRecord]})
-// console.log(newRecord);
+
         this.props.updateHistory(newRecord)
         this.setState({inputOne: "", inputTwo: " "})
     }
 
-    
-
-
-    
     render(props) {
         let displayedHistory;
         
         if(this.props.oilChangeHistory.length === 0) {
-           displayedHistory = <p className ="no-history">No Oil Change History Found</p>
+            displayedHistory = <p className ="no-history">No Oil Change History Found</p>
         } else {
 
             displayedHistory = this.props.oilChangeHistory.map((item, index) => {
@@ -70,5 +62,12 @@ class HistoryCard extends Component {
     }
 
 }
+
+HistoryCard.propTypes = {
+    updateHistory: PropTypes.func,
+    oilChangeHistory: PropTypes.array,
+    match: PropTypes.object,
+}
+
 
 export default HistoryCard

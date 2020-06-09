@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import { Switch, Route, Redirect, L} from 'react-router-dom';
 import './Login.css';
-import { decodeVin } from '../../apiCalls'
 import { Link } from 'react-router-dom';
 import stockImage from './audi-stock-image.jpg'
 import Form from "../Form/Form.jsx"
-
+import PropTypes from 'prop-types';
 
 const Login = (props) => {
-
 
         
         return (
@@ -39,6 +37,13 @@ const Login = (props) => {
             </section>
 
         )
+    }
+
+    Login.propTypes = {
+        buildCar: PropTypes.func,
+        potentialCar: PropTypes.object,
+        addCarToGarage: PropTypes.func,
+        resetPotentialCar: PropTypes.func,
     }
 
 

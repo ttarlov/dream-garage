@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import "./CarDetails.css"
 import stockCar from './stock-car-img.jpg'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 const CarDetails = (props) => {
-    // console.log("looking for id here",props);
     
+  
 
 return (
     <section className='car-details-card'>
@@ -44,5 +44,13 @@ return (
 )
 
 }
+
+CarDetails.propTypes = {
+    year: PropTypes.string,
+    make: PropTypes.string,
+    model: PropTypes.string,
+    trim: PropTypes.string,
+}
+
 
 export default CarDetails

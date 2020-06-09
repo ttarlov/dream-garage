@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import garage from './garage.svg'
 import moneyIcon  from './add-expense.svg'
 import mpg from './fuel-economy.svg'
-import addExpense from './add-expense.svg'
 import './NavBar.css'
+import PropTypes from 'prop-types';
 
 const NavBar = (props) => {
+
+   
 
     return (
         <section className="nav-bar">
@@ -38,5 +40,10 @@ const NavBar = (props) => {
 
 
 }
+
+NavBar.propTypes = {
+    numberOfCars: PropTypes.number
+}
+
 
 export default NavBar

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { decodeVin } from '../../apiCalls'
 import './Form.css'
+import PropTypes from 'prop-types';
+
 
 class Form extends Component {
     constructor(props) {
@@ -73,5 +75,11 @@ class Form extends Component {
     }
 
 }
+
+
+Form.propTypes = {
+    buildCar: PropTypes.func
+}
+
 
     export default Form 

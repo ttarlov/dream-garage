@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './LandinPage.css';
 import CarDetails from '../CarDetails/CarDetails.jsx'
 import "./LandinPage.css"
+import PropTypes from 'prop-types';
 
 const LandinPage = (props) => {
-    // console.log(props);
-
+    
+   
     let carsInGarage; 
     carsInGarage = props.garage.map(car => {
         
@@ -21,7 +22,6 @@ const LandinPage = (props) => {
                 displacement = {car["Displacement (L)"]}
                 hp = {car["Engine Brake (hp)"]}
                 carId = {car.id}
-                // getOilChangeHistory = {props.getOilChangeHistory}
             />
 
 
@@ -37,5 +37,13 @@ const LandinPage = (props) => {
 
 
 }
+
+
+LandinPage.propTypes = {
+    garage: PropTypes.array
+}
+
+
+
 
 export default LandinPage
