@@ -55,7 +55,7 @@ it('Should allow user to log into "garage given correct date inputs" ', () => {
 
 });
 
-it('should give an error message if input is missing', () => {
+it('should give an error message if year input is less than 4 characters', () => {
     
     const { getByText, getByPlaceholderText, debug } = render(
         <MemoryRouter>
@@ -68,7 +68,7 @@ it('should give an error message if input is missing', () => {
         const submitBtnEl = getByText('Submit')
         expect(submitBtnEl).toBeInTheDocument()
 
-        fireEvent.change(getByPlaceholderText('XXXX'), {target: {value: ''}});
+        fireEvent.change(getByPlaceholderText('XXXX'), {target: {value: '199'}});
         fireEvent.change(getByPlaceholderText('vin number'), {target: {value: 'xxxxxxxxxxxxxx'}});
         fireEvent.click(getByText('Submit'))
         expect(getByText('Please Fill In All Inputs')).toBeInTheDocument()
