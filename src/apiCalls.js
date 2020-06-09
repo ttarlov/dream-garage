@@ -9,7 +9,6 @@ export const decodeVin = async (vin, year) => {
         throw new Error(`Problem received status code of ${result.status}`)
     }
         const response = await result.json() 
-    //    console.log(response.Results)
     return response.Results
     } catch (error) {
     window.alert(`Server Error. It's not your fault the error is: ${error}`)
