@@ -73,7 +73,6 @@ it('should give an error message if year input is less than 4 characters', () =>
         fireEvent.click(getByText('Submit'))
         expect(getByText('Please Fill In All Inputs')).toBeInTheDocument()
 
-        debug()
 }); 
 
 

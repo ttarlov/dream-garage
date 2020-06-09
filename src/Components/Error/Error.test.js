@@ -21,7 +21,6 @@ describe("Error Component", () => {
         const buttonEl = getByText("Go Back to Login Page")
         expect(buttonEl).toBeInTheDocument()
 
-        debug()
 
     });
 
