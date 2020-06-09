@@ -67,7 +67,7 @@ it('As a user after I fill in Year and Vin info (correctly) I should see my gara
 });
 
 
-it('As a user I should see the car i chose to be added to the garage when I click on the Add To garage BTN ', async () => {
+it('As a user I should see the car I choose to be added to the garage when I click on the Add To garage BTN ', async () => {
 
   const { getByText, getByPlaceholderText, debug } = renderApp()
 
@@ -80,10 +80,10 @@ it('As a user I should see the car i chose to be added to the garage when I clic
     
     fireEvent.click(getByText('Add To garage'))
      
-    const typeEl = getByText("Type: Avant")
+    const typeEl = getByText("Type: quattro")
     expect(typeEl).toBeInTheDocument()
-    
-
+     
+  debug()
 });
 
 
@@ -123,14 +123,13 @@ it('As a user I should be able to add new oil change record', async () => {
 
     fireEvent.click(getByText("Oil Change History"))
 
-    fireEvent.change(getByPlaceholderText('data'), {target: {value: '06-20-2020'}});
+    fireEvent.change(getByPlaceholderText('date'), {target: {value: '06-20-2020'}});
     fireEvent.change(getByPlaceholderText('mileage'), {target: {value: '125,666'}});
     fireEvent.click(getByText("Add New Record"))
 
     const addedHistoryEl = getByText("Date: 06-20-2020 | Mileage 125,666")
     expect(addedHistoryEl).toBeInTheDocument()
   
-    debug()
 
 });
 
