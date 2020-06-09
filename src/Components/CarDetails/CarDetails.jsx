@@ -5,7 +5,7 @@ import stockCar from './stock-car-img.jpg'
 import { Link } from 'react-router-dom'
 
 const CarDetails = (props) => {
-    console.log("looking for id here",props);
+    // console.log("looking for id here",props);
     
 
 return (
@@ -21,10 +21,10 @@ return (
         <div className="specs-history-container">
             <p>Specs:</p>
             <ul>
-                <li>Trim: {props.trim}</li>
-                <li>Type: {props.series}</li>
-                <li>Engine Size: {props.displacement}</li>
-                <li>HP: {props.hp}</li>
+                <li>Trim: {props.trim === null ? "N/A" : props.trim}</li>
+                <li>Type: {props.series === null ? "N/A" : props.trim}</li>
+                <li>Engine Size: {props.displacement === null ? "N/A" : props.displacement}</li>
+                <li>HP: {props.hp === null ? "N/A" : props.hp}</li>
             </ul>
         </div>
         </div>
