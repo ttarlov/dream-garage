@@ -32,6 +32,7 @@ and allow user to track vehicle location and show it on a map.
 3. run `npm install`
 4. run `npm start`
 5. Open localhost:3000 in your favorite browser (unless your terminal says otherwise)
+6. NOTE: App is built for mobile first. Run with devtool in iphone x screen for best results. 
 
 ## Animation 
 ![1](./src/screenshots/dream-garage-v2.gif)
@@ -49,6 +50,8 @@ and allow user to track vehicle location and show it on a map.
 
 ![1](./src/screenshots/login-page.png)
 
+App is built for mobile first. Run with devtool in iphone x screen for best results. 
+ 
 You can use my Audi as an example 
 
 Year: 1999
