@@ -37,7 +37,7 @@ class HistoryCard extends Component {
                 let keys = Object.keys(item)
                 
                 return (
-                    <li className="history-item" key={index}>{keys[0]}: {item.Date} | {keys[1]} {item.Mileage} </li>
+                    <li className="history-item" key={index}>{keys[0]}: {item.Date} | {keys[1]}: {item.Mileage} </li>
                     )
                 })
                 
