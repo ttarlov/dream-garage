@@ -72,3 +72,8 @@
     border-radius: 7px;
     padding: 5px;
 }
+
+.not-available {
+    cursor: not-allowed;
+    color: grey;
+}
