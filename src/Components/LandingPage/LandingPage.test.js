@@ -37,7 +37,6 @@ describe("LandingPage Component", () => {
             expect(typeEl).toBeInTheDocument()
 
 
-            debug()
     });
 
 

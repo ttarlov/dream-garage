@@ -8,7 +8,6 @@ const LandinPage = (props) => {
 
     let carsInGarage; 
     carsInGarage = props.garage.map(car => {
-        console.log(car);
         
        
         return (
