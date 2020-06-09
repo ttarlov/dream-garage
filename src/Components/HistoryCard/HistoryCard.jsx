@@ -7,7 +7,6 @@ class HistoryCard extends Component {
     
     constructor(props) {
         super(props)
-        console.log(this.props);
         this.state = {
             // history: [...this.props.history],
             inputOne: "",
@@ -35,20 +34,22 @@ class HistoryCard extends Component {
 
     
     render(props) {
-        console.log(this.props.oilChangeHistory)
         let displayedHistory;
+        
+        if(this.props.oilChangeHistory.length === 0) {
+           displayedHistory = <p className ="no-history">No Oil Change History Found</p>
+        } else {
 
-        displayedHistory = this.props.oilChangeHistory.map((item, index) => {
-            console.log(item);
-            
+            displayedHistory = this.props.oilChangeHistory.map((item, index) => {
+                
                 let keys = Object.keys(item)
-                console.log(keys);
                 
                 return (
-                <li className="history-item" key={index}>{keys[0]}: {item.Date} | {keys[1]} {item.Mileage} </li>
-                )
-            })
-        
+                    <li className="history-item" key={index}>{keys[0]}: {item.Date} | {keys[1]} {item.Mileage} </li>
+                    )
+                })
+                
+        }
         return(
             <section className="displayed-history-container">
                 <ul className="history-item-container">
@@ -56,7 +57,7 @@ class HistoryCard extends Component {
                 </ul>
                     <div className="add-new-record-container">
                         <form className ="add-new-record-inputs">
-                            <input className="new-record-input" type="text" name="inputOne" value={this.state.inputOne} placeholder="data" onChange={this.handleChange}></input>
+                            <input className="new-record-input" type="text" name="inputOne" value={this.state.inputOne} placeholder="date" onChange={this.handleChange}></input>
                             <input className="new-record-input" type="text" name="inputTwo" value={this.state.inputTwo} placeholder="mileage" onChange={this.handleChange}></input>
                         </form>
                     <button style={{color:this.state.inputOne === "" || this.state.inputTwo=== "" ? "grey" : null} } disabled = {this.state.inputOne === "" || this.state.inputTwo=== ""} className="add-new-record-btn" onClick={() => this.createRecord()}>Add New Record</button>
