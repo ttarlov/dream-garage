@@ -25,7 +25,7 @@ class Form extends Component {
             this.setState({error: "Please Fill In All Inputs"}) 
         } else {
             e.preventDefault();
-            console.log(this.state.vin, this.state.year);
+            // console.log(this.state.vin, this.state.year);
             
             this.props.buildCar(decodeVin(this.state.vin, this.state.year))
             this.setState({vin:"", year:"", error: ""})
@@ -64,7 +64,7 @@ class Form extends Component {
                 onChange={this.handleChange}
             />
             </div>
-                <button type='button' className="submit-btn" onClick={(e)=> this.loginUser(e)} >Submit</button>
+                <button style={{color:this.state.year === "" || this.state.vin=== "" ? "grey" : null} } disabled = {this.state.year === "" || this.state.vin=== ""} type='button' className="submit-btn" onClick={(e)=> this.loginUser(e)} >Submit</button>
             </form>
             {this.state.error && <div> <p className="error-message">{this.state.error}</p> </div>}
             </section>
