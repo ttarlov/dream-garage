@@ -8,6 +8,8 @@ import NavBar from '../NavBar/NavBar.jsx'
 import HistoryCard from '../HistoryCard/HistoryCard.jsx'
 import uniqid from 'uniqid'
 
+
+
 class App extends Component {
   constructor(){
     super();
@@ -86,7 +88,7 @@ class App extends Component {
       <main className='main-section'> 
       <Switch>
         
-        <Route exact path = '/main' render = { () => 
+        <Route exact path = '/' render = { () => 
          <Login 
           buildCar = {this.buildCar} 
           resetPotentialCar = {this.resetPotentialCar}
