@@ -86,7 +86,7 @@ class App extends Component {
       <main className='main-section'> 
       <Switch>
         
-        <Route exact path = '/' render = { () => 
+        <Route exact path = '/main' render = { () => 
          <Login 
           buildCar = {this.buildCar} 
           resetPotentialCar = {this.resetPotentialCar}
