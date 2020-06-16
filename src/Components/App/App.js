@@ -8,6 +8,8 @@ import NavBar from '../NavBar/NavBar.jsx'
 import HistoryCard from '../HistoryCard/HistoryCard.jsx'
 import uniqid from 'uniqid'
 
+
+
 class App extends Component {
   constructor(){
     super();
