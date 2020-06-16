@@ -10,7 +10,7 @@ const Error = () => {
             <img  className="broken-car-img" src={accident} alt="broken car"></img>
             <h1>Accidents Happen</h1>
 
-            <Link to='/main' >
+            <Link to='/' >
                 <button className='back-to-login-btn'>Go Back to Login Page</button>
             </Link >
 
