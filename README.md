@@ -12,7 +12,7 @@ Dream Garage is an application I built during my time at [Turing School of Softw
 
 **Challenges:**
 
-I had really big plans (I still do) for this app. However with just 5 days my MVP was much simpler than what i hoped it would be. Testing has proven to be much harder especially integration testing. I have gotten much better at it but its still one of my biggest challenges. 
+I had really big plans (I still do) for this app. However with just 5 days my MVP was much simpler than what I hoped it would be. Testing has proven to be much harder especially integration testing. I have gotten much better at it but it is still one of my biggest challenges. 
 
 
 **Future Plans for the App** 
@@ -22,8 +22,9 @@ I plan to keep working on this app and add following functionality:
 1. Ability to add multiple vehicles to the garage
 2. Ability to track fuel economy, and repair history
 3. Ability to load document such as insurance information and receipts
-4. I would like to build this app in React Native to deploy natively on Android and IOS
-5. I would like to build an Arduino based GPS tracker that would integrate into the app 
+4. Add Redux Global State Management or React Hooks (Context API)
+5. I would like to build this app in React Native to deploy natively on Android and IOS
+6. I would like to build an Arduino based GPS tracker that would integrate into the app 
 and allow user to track vehicle location and show it on a map. 
 
 ## Setup
